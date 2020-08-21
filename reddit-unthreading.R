@@ -132,7 +132,7 @@ merge_posts_response <-
 ##################################################################
 
 posts_tibble <-
-  read_csv("subreddit-posts-Professors-may2020-jun2020.csv") %>%
+  read_csv("r-Professors-posts-may2020-jun2020.csv") %>%
   mutate(post_date_time = post_date_time %>%
            as.numeric() %>%
            anytime(asUTC = TRUE) %>%
@@ -177,5 +177,5 @@ dim(posts_tibble); dim(responses_tibble)
 merged_tibble <- merge_posts_response(posts_tibble, responses_tibble)
 dim(merged_tibble)
 
-#write_csv(merged_tibble, "subreddit-posts-responses-Professors-may2020-jun2020.csv")
+#write_csv(merged_tibble, "r-Professors-posts-responses-may2020-jun2020.csv")
 
